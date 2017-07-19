@@ -1,5 +1,5 @@
 current directory: /Users/furuhama.yusuke/workspace/sample_app/vendor/bundle/ruby/2.4.0/gems/nokogiri-1.8.0/ext/nokogiri
-/Users/furuhama.yusuke/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20170719-2688-1eqtm1j.rb extconf.rb --use-system-libraries --with-xml2-include=/usr/local/opt/libxml2/include/libxml2
+/Users/furuhama.yusuke/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20170719-7763-w8p1ay.rb extconf.rb --use-system-libraries --with-xml2-include=/usr/local/opt/libxml2/include/libxml2
 checking if the C compiler accepts ... yes
 checking if the C compiler accepts -Wno-error=unused-command-line-argument-hard-error-in-future... no
 Building nokogiri using system libraries.
@@ -112,4 +112,4 @@ rm -rf /Users/furuhama.yusuke/workspace/sample_app/vendor/bundle/ruby/2.4.0/gems
 
 current directory: /Users/furuhama.yusuke/workspace/sample_app/vendor/bundle/ruby/2.4.0/gems/nokogiri-1.8.0/ext/nokogiri
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nokogiri.bundle ./.gem.20170719-2688-1fo00pq/nokogiri
+/usr/bin/install -c -m 0755 nokogiri.bundle ./.gem.20170719-7763-os18vi/nokogiri
