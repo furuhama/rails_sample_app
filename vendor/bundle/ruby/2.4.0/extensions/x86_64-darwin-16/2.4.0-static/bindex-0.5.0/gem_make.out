@@ -1,5 +1,5 @@
 current directory: /Users/furuhama.yusuke/workspace/sample_app/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
-/Users/furuhama.yusuke/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20170719-5565-gx3ej8.rb extconf.rb
+/Users/furuhama.yusuke/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20170719-7763-13jtu9p.rb extconf.rb
 creating Makefile
 
 current directory: /Users/furuhama.yusuke/workspace/sample_app/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
@@ -12,4 +12,4 @@ linking shared-object bindex/cruby.bundle
 
 current directory: /Users/furuhama.yusuke/workspace/sample_app/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20170719-5565-1ov08id/bindex
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20170719-7763-1n0n6nu/bindex
