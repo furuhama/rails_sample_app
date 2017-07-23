@@ -26,8 +26,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-# bootstrap-sassを追加する
+# bootstrap-sassを追加
 gem 'bootstrap-sass', '3.3.7'
+# ハッシュ関数を導入するためにbcryptを追加
+gem 'bcrypt', '3.1.11'
 
 group :production do
   gem 'pg'
