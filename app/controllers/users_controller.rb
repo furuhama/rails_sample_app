@@ -9,11 +9,17 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user]) # 実装は終わっていない
+    @user = User.new(user_params)
     if @user.save
       # 保存の成功についてここに
     else
       render 'new'
     end
   end
+
+  private
+
+    def user_params
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
 end
