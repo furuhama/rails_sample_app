@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
   before_save { self.email = email.downcase } # DBへの保存時に全てのメールアドレスを小文字にする
-  # ちなみに代入式の両辺に self が出てくる場合、右辺の self は省略できる
   # before_save { email.downcase! } でも可
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
@@ -9,7 +8,7 @@ class User < ApplicationRecord
             format: { with: VALID_EMAIL_REGEX },
             uniqueness: { case_sensitive: false }
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   class << self # この定義方法よくわからない
     # 渡された文字列のハッシュ値を返す
