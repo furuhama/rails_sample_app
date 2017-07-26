@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass', '3.3.7'
 # ハッシュ関数を導入するためにbcryptを追加
 gem 'bcrypt', '3.1.11'
+# bootstrapを動かすためにjquery-railsを入れる
+gem 'jquery-rails'
 
 group :production do
   gem 'pg'
