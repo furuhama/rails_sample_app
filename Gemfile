@@ -30,6 +30,9 @@ gem 'bootstrap-sass', '3.3.7'
 gem 'bcrypt', '3.1.11'
 # bootstrapを動かすためにjquery-railsを入れる
 gem 'jquery-rails'
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 group :production do
   gem 'pg'
