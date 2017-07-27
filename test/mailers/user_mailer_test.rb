@@ -4,7 +4,6 @@ class UserMailerTest < ActionMailer::TestCase
     user = users(:furuhama)
     user.activation_token = User.new_token
     mail = UserMailer.account_activation(user)
-    binding.pry
     assert_equal "Account activation", mail.subject
     assert_equal [user.email], mail.to
     assert_equal ["noreply@example.com"], mail.from
