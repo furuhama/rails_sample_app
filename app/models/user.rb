@@ -68,6 +68,11 @@ class User < ApplicationRecord
     reset_sent_at < 2.hours.ago
   end
 
+  # feedの定義の試作版、完全な実装は14章で行うらしい
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
+
   private
 
     # メールアドレスをすべて小文字に
