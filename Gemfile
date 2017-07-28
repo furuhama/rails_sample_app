@@ -33,6 +33,10 @@ gem 'jquery-rails'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+# 画像upload機能のためのgemたち
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 
 group :production do
   gem 'pg'
