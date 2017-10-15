@@ -1,7 +1,5 @@
 require 'test_helper'
-
 class UserTest < ActiveSupport::TestCase
-
   def setup
     @user = User.new(name: 'Example User', email: 'user@example.com',
                      password: 'hogefuga', password_confirmation: 'hogefuga')
@@ -80,6 +78,34 @@ class UserTest < ActiveSupport::TestCase
     @user.microposts.create!(content: "Lorem ipsum")
     assert_difference 'Micropost.count', -1 do
       @user.destroy
+    end
+  end
+
+  test "should follow and unfollow a user" do
+    furuhama = users(:furuhama)
+    tomiyama = users(:tomiyama)
+    assert_not furuhama.following?(tomiyama)
+    furuhama.follow(tomiyama)
+    assert furuhama.following?(tomiyama)
+    furuhama.unfollow(tomiyama)
+    assert_not furuhama.following?(tomiyama)
+  end
+
+  test "feed should have the right posts" do
+    furuhama = users(:furuhama)
+    tomiyama = users(:tomiyama)
+    ito = users(:ito)
+    # 自分自身の投稿を確認
+    furuhama.microposts.each do |post_self|
+      assert furuhama.feed.include?(post_self)
+    end
+    # フォローしているユーザーの投稿を確認
+    ito.microposts.each do |post_following|
+      assert furuhama.feed.include?(post_following)
+    end
+    # フォローしていないユーザーの投稿が表示されないことを確認
+    tomiyama.microposts.each do |post_unfollow|
+      assert_not furuhama.feed.include?(post_unfollow)
     end
   end
 end

@@ -1,0 +1,15 @@
+one:
+  follower: furuhama
+  followed: kuroda
+
+two:
+  follower: furuhama
+  followed: ito
+
+three:
+  follower: ito
+  followed: furuhama
+
+four:
+  follower: tomiyama
+  followed: ito
