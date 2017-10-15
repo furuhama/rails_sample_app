@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
-  scope :activated, -> { where(:activated, true) }
+  scope :activated, -> { where(activated: true) }
 
   class << self # 特異クラス方式のクラスメソッド定義
     # 渡された文字列のハッシュ値を返す
