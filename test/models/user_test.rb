@@ -72,6 +72,6 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "authenticated? should return false for a user with nil digest" do
-    assert_not @user.authenticated?('') # remember_tokenの値はなんでも構わない(remember_digestを持たない@userをauthenticated?にかけることが重要)
+    assert_not @user.authenticated?(:remember, '') # remember_tokenの値はなんでも構わない(remember_digestを持たない@userをauthenticated?にかけることが重要)
   end
 end
