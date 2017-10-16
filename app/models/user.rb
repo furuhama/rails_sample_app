@@ -33,7 +33,7 @@ class User < ApplicationRecord
   # 永続セッションのためにユーザーをデータベースに記憶
   def remember
     self.remember_token = User.new_token
-    update!(:remember_digest, User.digest(remember_token))
+    update!(remember_digest: User.digest(remember_token))
   end
 
   # 渡されたトークンがダイジェストと一致したら true を返す
@@ -45,7 +45,7 @@ class User < ApplicationRecord
 
   # ユーザーのログイン情報を破棄
   def forget
-    update!(:remember_digest, nil)
+    update!(remember_digest: nil)
   end
 
   # アカウントを有効にする
