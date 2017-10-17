@@ -7,6 +7,10 @@ class UsersController < ApplicationController
 
   def index
     @users = User.activated.paginate(page: params[:page])
+    respond_to do |format|
+      format.html
+      format.json { render json: User.activated }
+    end
   end
 
   def show

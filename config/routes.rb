@@ -17,4 +17,13 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+
+  # API用
+  namespace :api, {format: 'json'} do
+    namespace :v1 do
+      namespace :users do
+        get "/" , :action => "index"
+      end
+    end
+  end
 end
