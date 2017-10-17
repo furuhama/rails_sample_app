@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+/vendor/bundle
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -19,8 +20,13 @@
 
 /node_modules
 /yarn-error.log
-
 .byebug_history
-/vendor/bundle
+
+# for Rubymine
 .idea
+
+# for mac osx
 .DS_Store
+
+# for rbenv
+.ruby-version
