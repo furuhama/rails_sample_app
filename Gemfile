@@ -37,8 +37,6 @@ gem 'bootstrap-will_paginate'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
-# api用のgem
-gem 'grape'
 
 group :production do
   gem 'pg'
