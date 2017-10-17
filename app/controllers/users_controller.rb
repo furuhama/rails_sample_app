@@ -22,8 +22,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
-      flash[:info] = "Please check your email to activate your account."
-      redirect_to root_url
+
+      redirect_to root_url, alert: 'Please check your email to activate your account.'
     else
       render 'new'
     end
@@ -34,8 +34,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      flash[:success] = "Profile updated"
-      redirect_to @user
+      redirect_to @user, alert: 'Profile updated'
     else
       render 'edit'
     end
@@ -43,19 +42,20 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    flash[:success] = "User deleted"
-    redirect_to users_url
+    redirect_to users_url, alert: 'User deleted'
   end
 
   def following
     @title = "Following"
     @users = @user.following.paginate(page: params[:page])
+
     render 'show_follow'
   end
 
   def followers
     @title = "Followers"
     @users = @user.followers.paginate(page: params[:page])
+
     render 'show_follow'
   end
 
