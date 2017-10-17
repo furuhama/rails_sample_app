@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
 
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
-  before_action :correct_user, only: [:edit, :update]
+  before_action :logged_in_user, only: %i(index edit update destroy following followers)
+  before_action :correct_user, only: %i(edit update)
   before_action :admin_user, only: :destroy
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :followers]
+  before_action :set_user, only: %i(show edit update destroy following followers)
 
   def index
     @users = User.activated.paginate(page: params[:page])
