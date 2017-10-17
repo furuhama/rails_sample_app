@@ -20,19 +20,19 @@ class User < ApplicationRecord
 
   scope :activated, -> { where(activated: true) }
 
-  class << self # 特異クラス方式のクラスメソッド定義
-    # 渡された文字列のハッシュ値を返す
-    def digest(string)
-      cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
-      BCrypt::Password.create(string, cost: cost)
-    end
-
-    # ランダムなトークンを返す
-    def new_token
-      SecureRandom.urlsafe_base64
-    end
+  # クラスメソッド
+  # 渡された文字列のハッシュ値を返す
+  def self.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
   end
 
+  # ランダムなトークンを返す
+  def self.new_token
+    SecureRandom.urlsafe_base64
+  end
+
+  # インスタンスメソッド
   # 永続セッションのためにユーザーをデータベースに記憶
   def remember
     self.remember_token = User.new_token
