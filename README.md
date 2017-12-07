@@ -1,24 +1,6 @@
-# README
+* this repository is a sample application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* this web app is for Rails Tutorial
 
-Things you may want to cover:
+* a simple twitter-like web application
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
