@@ -10,7 +10,7 @@ module Admin
 
     def authenticate_admin
       unless is_admin?
-        redirect_to root_path, alert: 'ピピーッ!!あんたadminじゃないやん!!!!!!!!!!!!!!!!!!'
+        redirect_to maintainer_dashboard_path, alert: 'ピピーッ!!あんたadminじゃないやん!!!!!!!!!!!!!!!!!!'
       end
     end
   end
