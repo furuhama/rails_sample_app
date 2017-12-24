@@ -6,6 +6,12 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+      <p>
+        <% @user_permissions.each do |user_permission| %>
+          <%= user_permission %>
+          <br>
+        <% end %>
+      </p>
     </section>
     <section class="stats">
     <%= render 'shared/stats' %>
