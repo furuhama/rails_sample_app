@@ -26,4 +26,14 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  # admin
+  namespace :admin do
+    resource :dashboard, only: [:show]
+  end
+
+  # maintainer
+  namespace :maintainer do
+    resource :dashboard, only: [:show]
+  end
 end

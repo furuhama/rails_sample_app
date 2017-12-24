@@ -2,3 +2,12 @@
 <h1><%= current_user.name %></h1>
 <span><%= link_to "view my profile", current_user %></span>
 <span><%= pluralize(current_user.microposts.count, "micropost") %></span>
+<span><% if current_user.user_permissions.present? %>
+  <%= 'dashboard link' %>
+<% end %></span>
+<span><% if current_user.user_permissions.name_list.include?('admin') %>
+  <%= link_to "admin", admin_dashboard_path %>
+<% end %>
+<% if current_user.user_permissions.name_list.include?('maintainer') %>
+  <%= link_to "maintainer", maintainer_dashboard_path %>
+<% end %></span>
