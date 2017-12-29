@@ -69,4 +69,18 @@ group :test do
   gem 'minitest-reporters', '1.1.14'
   gem 'guard', '2.13.0'
   gem 'guard-minitest', '2.4.4'
+  # テスト用にRSpec利用
+  gem 'rspec-rails', '~> 3.6'
+  # rspecにて条件を羅列する記述をするため
+  gem 'rspec-parameterized', require: false
+  # json spec
+  gem 'rspec-json_matcher', require: false
+  # テストデータ削除
+  gem 'database_rewinder'
+  # テストデータ作成
+  gem "factory_bot_rails", require: false
+  # 疑似データ作成
+  gem "faker"
+  # rspecのmatcherの拡張
+  gem 'shoulda-matchers'
 end
