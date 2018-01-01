@@ -30,6 +30,7 @@ gem 'bootstrap-sass', '3.3.7'
 gem 'bcrypt', '3.1.11'
 # bootstrapを動かすためにjquery-railsを入れる
 gem 'jquery-rails'
+# 疑似データ作成
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
@@ -37,6 +38,8 @@ gem 'bootstrap-will_paginate'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+# use mysql for database
+gem 'mysql2'
 
 group :production do
   gem 'pg'
@@ -46,8 +49,6 @@ group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-rails'
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
@@ -79,8 +80,6 @@ group :test do
   gem 'database_rewinder'
   # テストデータ作成
   gem "factory_bot_rails", require: false
-  # 疑似データ作成
-  gem "faker"
   # rspecのmatcherの拡張
   gem 'shoulda-matchers'
 end
