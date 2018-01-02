@@ -4,28 +4,28 @@ furuhama:
   password_digest: <%= User.digest('password') %>
   admin: true
   activated: true
-  activated_at: <%= Time.zone.now %>
+  activated_at: <%= Time.zone.now.to_datetime %>
 
 tomiyama:
   name: Tomiyama Daimaou
   email: tomiyama@example.co.jp
   password_digest: <%= User.digest('password') %>
   activated: true
-  activated_at: <%= Time.zone.now %>
+  activated_at: <%= Time.zone.now.to_datetime %>
 
 ito:
   name: Ito Daisuke
   email: ito@example.gov
   password_digest: <%= User.digest('password') %>
   activated: true
-  activated_at: <%= Time.zone.now %>
+  activated_at: <%= Time.zone.now.to_datetime %>
 
 kuroda:
   name: Kuroda Naoki
   email: kuroda@example.com
   password_digest: <% User.digest('password')%>
   activated: true
-  activated_at: <%= Time.zone.now %>
+  activated_at: <%= Time.zone.now.to_datetime %>
 
 <% 30.times do |n| %>
 user_<%= n %>:
@@ -33,5 +33,5 @@ user_<%= n %>:
   email: <%= "user-#{n}@example.com" %>
   password_digest: <%= User.digest('password') %>
   activated: true
-  activated_at: <%= Time.zone.now %>
+  activated_at: <%= Time.zone.now.to_datetime %>
 <% end %>
