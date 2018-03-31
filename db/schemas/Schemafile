@@ -1,0 +1,7 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+require 'microposts.schema'
+require 'relationships.schema'
+require 'user_permissions.schema'
+require 'users.schema'
