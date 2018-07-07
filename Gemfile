@@ -40,8 +40,6 @@ gem 'mini_magick'
 gem 'fog'
 # use mysql for database
 gem 'mysql2'
-# maintain schemas by using ridgepole
-gem 'ridgepole'
 
 group :production do
   gem 'pg'
