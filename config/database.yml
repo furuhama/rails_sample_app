@@ -5,6 +5,8 @@ default: &default
   pool: 5
   username: root
   socket: /tmp/mysql.sock
+  port: 3306
+  url: <%= ENV['DATABASE_URL'] %>
 
 development:
   <<: *default
