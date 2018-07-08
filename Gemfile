@@ -41,10 +41,6 @@ gem 'fog'
 # use mysql for database
 gem 'mysql2'
 
-group :production do
-  gem 'pg'
-end
-
 group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
