@@ -1,15 +1,18 @@
-## this repository is a sample application
+## Sample Application like twitter
 
 * this web app is for Rails Tutorial
 
 * a simple twitter-like web application
+
+* Rails version: 5.2.1
 
 ## Usage
 
 ### local dev environment
 
 ```
-$ bundle install # or set vendor path with `--path=vendor/bundle`
+$ bundle install
+# or set vendor path with `--path=vendor/bundle`
 
 $ bundle exec rails db:create
 
