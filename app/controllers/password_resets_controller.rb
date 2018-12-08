@@ -8,13 +8,17 @@ class PasswordResetsController < ApplicationController
 
   def create
     @user = User.find_by(email: params[:password_reset][:email].downcase)
+
     if @user
       @user.create_reset_digest
       @user.send_password_reset_email
+
       flash[:info] = "Email sent with password reset instructions"
+
       redirect_to root_url
     else
       flash.now[:danger] = "Email address not found"
+
       render 'new'
     end
   end
@@ -25,11 +29,14 @@ class PasswordResetsController < ApplicationController
   def update
     if params[:user][:password].empty?
       @user.errors.add(:password, :blank)
+
       render 'edit'
     elsif @user.update(user_params)
       log_in @user
       @user.update!(reset_digest: nil)
+
       flash[:success] = "Password has been reset."
+
       redirect_to @user
     else
       render 'edit'
@@ -38,28 +45,29 @@ class PasswordResetsController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:user).permit(:password, :password_confirmation)
-    end
+  def user_params
+    params.require(:user).permit(:password, :password_confirmation)
+  end
 
-    # beforeフィルタ
+  # beforeフィルタ
 
-    def get_user
-      @user = User.find_by(email: params[:email])
-    end
+  def get_user
+    @user = User.find_by(email: params[:email])
+  end
 
-    # 正しいユーザーかどうか確認
-    def valid_user
-      if (!@user || !@user.activated? || !@user.authenticated?(:reset, params[:id]))
-        redirect_to root_url
-      end
+  # 正しいユーザーかどうか確認
+  def valid_user
+    if (!@user || !@user.activated? || !@user.authenticated?(:reset, params[:id]))
+      redirect_to root_url
     end
+  end
 
-    # トークンが期限切れかどうか確認
-    def check_expiration
-      if @user.password_reset_expired?
-        flash[:danger] = "Password reset has expired."
-        redirect_to new_password_reset_url
-      end
+  # トークンが期限切れかどうか確認
+  def check_expiration
+    if @user.password_reset_expired?
+      flash[:danger] = "Password reset has expired."
+
+      redirect_to new_password_reset_url
     end
+  end
 end

@@ -13,11 +13,12 @@ class Api::V1::UsersController < ApplicationController
           name: user.name,
       }
     end
+
     render json: @users
   end
 
   private
-  # リクエストパラメータのバリデーション
+
   def user_params
     params.permit(:id)
   end
