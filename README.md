@@ -4,7 +4,13 @@
 
 * a simple twitter-like web application
 
+## Library versions
+
+* Ruby version: 2.5.3
+
 * Rails version: 5.2.1
+
+* mysql version: 5.7
 
 ## Usage
 
