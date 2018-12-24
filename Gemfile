@@ -17,6 +17,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'mysql2'
+gem 'ruby-saml'
 
 group :development, :test do
   gem 'listen'
