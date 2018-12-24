@@ -18,6 +18,16 @@ Rails.application.routes.draw do
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
 
+  # SAML SSO Login
+  resources :saml, only: :index do
+    collection do
+      get :sso
+      post :acs
+      get :metadata
+      get :logout
+    end
+  end
+
   # API用
   namespace :api, {format: 'json'} do
     namespace :v1 do
