@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class SamlController < ApplicationController
+class SamlController < ActionController::Base
   def index
   end
 
