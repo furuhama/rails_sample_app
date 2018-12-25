@@ -131,12 +131,12 @@ class SamlController < ActionController::Base
       settings.soft = false
 
       # SP section
-      settings.issuer = '86c025e8-b9dd-4a2e-b3d5-f1b87ba7ad28'
+      settings.issuer = 'spn:86c025e8-b9dd-4a2e-b3d5-f1b87ba7ad28'
       settings.assertion_consumer_service_url = url_base + '/saml/acs'
       settings.assertion_consumer_logout_service_url = url_base + '/saml/logout'
 
       # IdP section
-      settings.idp_entity_id = ''
+      settings.idp_entity_id = 'https://sts.windows.net/c865db3f-e8a7-47cf-8b31-7c76b11eabef/'
       settings.idp_sso_target_url = 'https://login.microsoftonline.com/c865db3f-e8a7-47cf-8b31-7c76b11eabef/saml2'
       settings.idp_slo_target_url = ''
       settings.idp_cert = ''
